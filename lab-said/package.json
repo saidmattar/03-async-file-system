@@ -1,0 +1,18 @@
+{
+  "name": "lab-said",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "dependencies": {
+    "jest": "^20.0.4"
+  },
+  "description": ""
+}
