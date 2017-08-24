@@ -20,5 +20,7 @@
 
 ####  Documentation  
   * created a simple description of my project  
-  * created a simple layer of documentation that describes how to use `done` in jest callbacks  
+  * description of how to use `done` in jest callbacks:  
+      read the DOCs in the provided link  
+      https://facebook.github.io/jest/docs/asynchronous.html  
   * all done  

@@ -22,15 +22,9 @@ vegies.read = (callback) => {
         if(err) console.error(err);
 
         third = data.toString('hex', 0, 8);
-        // processFile();
-
-
         callback({first, second, third});
 
       });
     });
   });
-
 };
-
-// vegies.read();

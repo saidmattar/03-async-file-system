@@ -25,12 +25,24 @@ describe('My FS module', function() {
     });
 
 
-    readFile.read( (data) => {
+    readFile.read((data) => {
 
       let odata = [data.first, data.second, data.third];
       let ndata = [first1, second2, third3];
       expect(odata).toEqual(ndata);
       done();
     });
+  });
+
+  test('Testing for improper file path:', done => {
+    let badpath;
+
+    fs.readFile(`${__dirname}/../data/four.txt`, (err, data)=> {
+      if(err) console.error(err);
+      badpath = data.toString('hex', 0, 8);
+
+    });
+    expect(badpath).toBeUndefined();
+    done();
   });
 });
