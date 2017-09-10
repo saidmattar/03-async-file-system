@@ -24,7 +24,7 @@ let vegies = module.exports = callback => {
   });
 };
 
-vegies((err,data) => {
+vegies((err,assets) => {
   if(err) console.error(err);
-  console.log(data);
+  console.log(assets);
 });
