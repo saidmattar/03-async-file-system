@@ -9,7 +9,7 @@
   "jest": {
     "verbose": true,
     "testEnvironment": "node",
-    "collectCoverage": false,
+    "collectCoverage": true,
     "coverageDirectory": "./coverage",
     "coverageThreshold": {
       "global": {
