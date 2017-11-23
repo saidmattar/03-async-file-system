@@ -37,10 +37,9 @@ describe('My FS module', function() {
   test('Testing for improper file path:', done => {
     let badpath;
 
-    fs.readFile(`${__dirname}/../data/four.txt`, (err, data)=> {
+    fs.readFile(`${__dirname}/../data/badpath.txt`, (err, data)=> {
       if(err) console.error(err);
       badpath = data.toString('hex', 0, 8);
-
     });
     expect(badpath).toBeUndefined();
     done();

@@ -1,30 +1,30 @@
 'use-strict';
 
-
-const vegies = module.exports = {};
 const fs = require('fs');
 
-vegies.read = (callback) => {
+let vegies = module.exports = callback => {
   let first, second, third;
 
-  fs.readFile(`${__dirname}/../assets/one.txt`, (err, data) => {
-    if(err) console.error(err);
-    first = data.toString('hex', 0, 8);
+  fs.vegies(`${__dirname}/../assets/one.txt`, (err, oneData) => {
+    if(err) callback(new Error('error'));
+    first = oneData.toString('hex', 0, 8);
+
+    fs.vegies(`${__dirname}/../assets/two.txt`, (err, twoData) => {
+      if(err) callback(new Error('error'));
+      second = twoData.toString('hex', 0, 8);
 
 
-    fs.readFile(`${__dirname}/../assets/two.txt`, (err, data) => {
-      if(err) console.error(err);
+      fs.vegies(`${__dirname}/../assets/three.txt`, (err, threeData) => {
+        if(err) callback(new Error('error'));
+        third = threeData.toString('hex', 0, 8);
 
-      second = data.toString('hex', 0, 8);
-
-
-      fs.readFile(`${__dirname}/../assets/three.txt`, (err, data) => {
-        if(err) console.error(err);
-
-        third = data.toString('hex', 0, 8);
-        callback({first, second, third});
-
+        callback(null,first, second, third);
       });
     });
   });
 };
+
+vegies((err,assets) => {
+  if(err) console.error(err);
+  console.log(assets);
+});
