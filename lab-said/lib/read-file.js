@@ -17,7 +17,7 @@ module.exports = (dirPath, callback) => {
     }
 
     fs.readFile(`${dirPath}/${filesArr.pop()}`, (err, data) => {
-      results[filesArr.length] = data.toString('hex', 0, 16);
+      results[filesArr.length] = data.toString('UTF-8',0, 20);
       readFiles(filesArr);
     });
   }
