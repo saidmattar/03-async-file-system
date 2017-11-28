@@ -17,6 +17,7 @@ module.exports = (dirPath, callback) => {
     }
 
     fs.readFile(`${dirPath}/${filesArr.pop()}`, (err, data) => {
+      if(err) callback(err);
       results[filesArr.length] = data.toString('UTF-8',0, 20);
       readFiles(filesArr);
     });
